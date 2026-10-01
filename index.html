@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science HOTS Challenge — Kelas 2 SD</title>
+<meta name="description" content="30 soal Science (Sains/IPA) HOTS Level Nasional untuk kelas 2 SD">
+<style>
+  :root{
+    --primary:#6d28d9; --primary-dark:#5b21b6; --accent:#f59e0b;
+    --ok:#16a34a; --bad:#dc2626; --card:#ffffff; --ink:#1f2937; --muted:#6b7280;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Comic Sans MS','Segoe UI',system-ui,sans-serif;
+    color:var(--ink); min-height:100vh; padding:16px;
+    background:linear-gradient(135deg,#ede9fe,#dbeafe 50%,#fce7f3);
+  }
+  .wrap{max-width:760px;margin:0 auto}
+  header{text-align:center;margin-bottom:16px}
+  header h1{font-size:clamp(1.4rem,5vw,2.1rem);color:var(--primary)}
+  header p{color:var(--muted);font-size:.95rem}
+  .chip{display:inline-block;background:var(--accent);color:#7c2d12;font-weight:bold;
+    border-radius:999px;padding:4px 14px;font-size:.85rem;margin-top:8px}
+  .card{background:var(--card);border-radius:20px;padding:22px;
+    box-shadow:0 8px 24px rgba(76,29,149,.12);margin-bottom:14px}
+  .btn{display:block;width:100%;border:none;cursor:pointer;font-family:inherit;
+    font-size:1.05rem;border-radius:14px;padding:15px 18px;margin-top:10px;
+    background:var(--primary);color:#fff;font-weight:bold;transition:transform .1s}
+  .btn:active{transform:scale(.98)}
+  .btn:disabled{background:#c4b5fd;cursor:not-allowed}
+  .btn.secondary{background:#ede9fe;color:var(--primary)}
+  ul.rules{margin:12px 0 4px 22px;line-height:1.9;font-size:1rem}
+  label.small{display:block;margin-top:14px;font-weight:bold;color:var(--primary)}
+  input.name{width:100%;margin-top:6px;padding:13px 14px;border:2px solid #ddd6fe;
+    border-radius:12px;font-family:inherit;font-size:1rem}
+  .bar{height:12px;background:#ede9fe;border-radius:999px;overflow:hidden}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));
+    transition:width .3s;border-radius:999px}
+  .meta{display:flex;justify-content:space-between;align-items:center;
+    font-size:.9rem;color:var(--muted);margin-bottom:8px;gap:8px}
+  .lv{background:#ede9fe;color:var(--primary);border-radius:999px;padding:3px 10px;font-weight:bold}
+  .qtext{font-size:1.25rem;line-height:1.55;margin:14px 0 6px;font-weight:bold;white-space:pre-line}
+  .qsub{background:#f8fafc;border:2px dashed #c4b5fd;border-radius:12px;
+    padding:12px;margin-top:10px;font-size:1rem;line-height:1.7;white-space:pre-line}
+  .vis{text-align:center;font-size:2.4rem;letter-spacing:.3em;margin:8px 0}
+  .opt{display:block;width:100%;text-align:left;background:#f5f3ff;border:2px solid #ddd6fe;
+    border-radius:14px;padding:14px 16px;margin-top:10px;font-family:inherit;font-size:1.05rem;
+    cursor:pointer;line-height:1.4;transition:background .15s}
+  .opt:hover{background:#ede9fe}
+  .opt .k{display:inline-block;width:26px;font-weight:bold;color:var(--primary)}
+  .opt.sel{background:var(--primary);color:#fff;border-color:var(--primary-dark)}
+  .opt.sel .k{color:#fde68a}
+  .scorebox{text-align:center}
+  .circle{width:130px;height:130px;border-radius:50%;margin:10px auto;
+    display:flex;flex-direction:column;justify-content:center;
+    background:conic-gradient(var(--ok) calc(var(--p)*1%),#ede9fe 0)}
+  .circle .in{background:#fff;width:104px;height:104px;border-radius:50%;margin:13px auto;
+    display:flex;flex-direction:column;justify-content:center}
+  .circle b{font-size:2rem;color:var(--primary)}
+  .circle span{font-size:.8rem;color:var(--muted)}
+  .badge{font-size:1.3rem;font-weight:bold;color:var(--accent);margin-top:6px}
+  .rev{border-top:2px solid #f3f4f6;padding:14px 0;font-size:.98rem}
+  .rev .st{font-weight:bold;border-radius:8px;padding:2px 8px;font-size:.85rem}
+  .st.good{background:#dcfce7;color:var(--ok)}
+  .st.wrong{background:#fee2e2;color:var(--bad)}
+  .rev .qq{margin:8px 0 4px;font-weight:bold}
+  .rev .ans{line-height:1.7}
+  .rev .exp{background:#fffbeb;border-left:4px solid var(--accent);
+    padding:8px 10px;margin-top:8px;border-radius:0 8px 8px 0;font-size:.92rem}
+  .hrow{display:flex;align-items:center;gap:8px;background:#f8fafc;border:2px solid #ede9fe;
+    border-radius:12px;padding:9px 13px;margin-top:8px;font-size:.98rem}
+  .hdate{margin-left:auto;color:var(--muted);font-size:.82rem}
+  .hide{display:none}
+  footer{text-align:center;color:var(--muted);font-size:.82rem;margin-top:18px}
+  @media print{
+    body{background:#fff;padding:0}.noprint{display:none!important}
+    .card{box-shadow:none;border:1px solid #ddd}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🔬 Science HOTS Challenge 🔬</h1>
+    <p>Sains / IPA · 30 Soal · Tingkat Nasional</p>
+    <span class="chip">Kelas 2 SD · Level HOTS (C4–C6)</span>
+  </header>
+
+  <!-- MULAI -->
+  <section id="start" class="card">
+    <p style="line-height:1.8">
+      Halo, Bintang! 👋 Ini 30 soal Science (Sains) berpikir tingkat tinggi (HOTS).
+      Baca teks dan petunjuk dengan cermat, lalu pilih jawaban terbaik.
+    </p>
+    <ul class="rules">
+      <li>30 soal pilihan ganda (A–D)</li>
+      <li>Satu jawaban terbaik tiap soal</li>
+      <li>Jawaban terkunci begitu kamu memilih</li>
+      <li>Di akhir, kamu dapat nilai + pembahasan tiap soal</li>
+    </ul>
+    <p id="daily" style="margin-top:12px;font-weight:bold;color:var(--primary)"></p>
+    <label class="small" for="nm">Namamu (opsional, tampil di hasil) ✏️</label>
+    <input class="name" id="nm" type="text" maxlength="30" placeholder="Contoh: Aisyah">
+    <button class="btn" id="go">🚀 Mulai Kerjakan!</button>
+    <div id="histbox" class="hide">
+      <h2 style="color:var(--primary);margin-top:20px;font-size:1.1rem">📜 Riwayat Skor</h2>
+      <div id="hist"></div>
+      <button class="btn secondary" id="clearHist" style="font-size:.9rem;padding:10px">🗑️ Hapus Riwayat</button>
+    </div>
+  </section>
+
+  <!-- SOAL -->
+  <section id="quiz" class="hide">
+    <div class="card">
+      <div class="meta">
+        <span id="cnt">Soal 1 / 30</span>
+        <span class="lv" id="lv">🔍 Analisis</span>
+      </div>
+      <div class="bar"><i id="fill" style="width:0%"></i></div>
+      <div class="vis" id="vis" aria-hidden="true"></div>
+      <div class="qtext" id="qtext" role="region" aria-live="polite"></div>
+      <div class="qsub hide" id="qsub"></div>
+      <div id="opts"></div>
+    </div>
+    <button class="btn" id="next" disabled>Soal Berikutnya ➜</button>
+    <button class="btn secondary noprint" id="quit">⏱️ Selesai &amp; Lihat Nilai</button>
+  </section>
+
+  <!-- HASIL -->
+  <section id="res" class="hide">
+    <div class="card scorebox">
+      <div id="who" style="font-weight:bold;font-size:1.1rem"></div>
+      <div class="circle" id="circ" style="--p:0">
+        <div class="in"><b id="sc">0</b><span>dari 30</span></div>
+      </div>
+      <div class="badge" id="bdg"></div>
+      <p id="msg" style="margin-top:8px;line-height:1.7"></p>
+      <p id="saved" class="hide" style="color:var(--ok);font-weight:bold;margin-top:6px">✅ Skor tersimpan di riwayat (perangkat ini)</p>
+      <button class="btn" id="again">🔁 Kerjakan Ulang</button>
+      <button class="btn secondary noprint" id="printBtn">🖨️ Cetak Pembahasan</button>
+    </div>
+    <div class="card" id="revbox"></div>
+  </section>
+
+  <footer>Dibuat untuk pembelajaran Sains / IPA SD · HOTS: C4 Analisis · C5 Evaluasi · C6 Kreasi</footer>
+</div>
+
+<script>
+// ponytail: tanpa timer/shuffle/simpan-otomatis — tambah localStorage kalau perlu lanjut nanti
+const DATA=[{"lv": "C4","vis": "🐟","q": "Ikan bergerak di air dengan sirip. Burung bergerak di udara dengan sayap. Ular bergerak di tanah dengan…","o": ["sirip","sayap","perutnya (melata)","tanduk"],"a": 2,"e": "Ular tidak memiliki kaki; ia bergerak dengan menggerakkan perutnya, disebut melata."},{"lv": "C4","vis": "🌱","q": "Bagian tumbuhan yang menyerap air dan zat hara dari dalam tanah adalah…","o": ["daun","akar","bunga","buah"],"a": 1,"e": "Akar berada di dalam tanah dan bertugas menyerap air serta zat hara untuk tumbuhan."},{"lv": "C4","vis": "🍃","q": "Daun memasak makanan untuk tumbuhan dengan bantuan…","o": ["cahaya matahari","angin kencang","batu","kertas"],"a": 0,"e": "Daun membuat makanan (fotosintesis) dengan bantuan cahaya matahari."},{"lv": "C4","vis": "💧","q": "Air dimasukkan ke dalam freezer beberapa jam. Air itu akan…","o": ["menguap","membeku menjadi es","hilang","terbakar"],"a": 1,"e": "Di tempat yang sangat dingin, air membeku berubah menjadi es (benda padat)."},{"lv": "C4","vis": "🦋","q": "Urutan daur hidup kupu-kupu yang BENAR adalah…","o": ["kepompong – telur – ulat – kupu-kupu","telur – ulat – kepompong – kupu-kupu","telur – kepompong – ulat – kupu-kupu","ulat – telur – kepompong – kupu-kupu"],"a": 1,"e": "Kupu-kupu bertelur, telur menetas menjadi ulat, ulat menjadi kepompong, lalu keluarlah kupu-kupu."},{"lv": "C4","vis": "👂","q": "Dina menutup matanya, lalu mengenali suara ibunya dari dapur. Indra yang dipakai Dina adalah…","o": ["indra penglihatan","indra pendengaran","indra penciuman","indra peraba"],"a": 1,"e": "Mengenali suara menggunakan telinga, yaitu indra pendengaran."},{"lv": "C4","vis": "🌞","q": "Tanaman A diletakkan di dekat jendela yang terang. Tanaman B disimpan di dalam lemari gelap. Setelah seminggu, tanaman B terlihat pucat dan lemah. Mengapa?","o": ["Tanaman B kekurangan cahaya matahari.","Tanaman B kebanyakan air.","Tanaman B kekurangan tanah.","Tanaman B terlalu banyak udara."],"a": 0,"e": "Tanpa cahaya matahari, daun tidak bisa membuat makanan sehingga tanaman menjadi pucat dan lemah."},{"lv": "C4","vis": "🧲","q": "Paku, peniti, dan klip menempel pada magnet. Namun karet penghapus dan kertas tidak menempel. Kesimpulannya, magnet menarik benda yang terbuat dari…","o": ["kayu","logam (besi)","karet","kertas"],"a": 1,"e": "Magnet hanya menarik benda dari logam seperti besi, contohnya paku, peniti, dan klip."},{"lv": "C4","vis": "🐈","q": "Kucing hidup di darat dan bergerak dengan kaki. Ikan hidup di air dan bergerak dengan…","o": ["kaki","sayap","sirip","tangan"],"a": 2,"e": "Ikan bergerak di air dengan sirip dan ekor."},{"lv": "C4","vis": "⚡","q": "Ibu berkata, \"Jangan menyentuh colokan dan sakelar dengan tangan basah!\" Mengapa?","o": ["Karena tangan basah bisa tersengat listrik.","Karena listrik akan menjadi mati.","Karena colokan menjadi kotor.","Karena tangan menjadi bersih."],"a": 0,"e": "Air dapat menghantarkan listrik, jadi tangan basah sangat berbahaya jika menyentuh alat listrik."},{"lv": "C4","vis": "🌳","q": "Pada siang hari, di bawah pohon terdapat bayangan. Bayangan itu terjadi karena…","o": ["angin bertiup kencang","cahaya matahari terhalang oleh pohon","pohon menyerap air","daun berwarna hijau"],"a": 1,"e": "Bayangan terbentuk saat cahaya matahari terhalang oleh benda, misalnya pohon."},{"lv": "C4","vis": "🐠","q": "Ikan bernapas di dalam air menggunakan insang. Kucing bernapas menggunakan…","o": ["insang","paru-paru","sirip","kulit"],"a": 1,"e": "Hewan darat seperti kucing bernapas dengan paru-paru."},{"lv": "C4","vis": "☁️","q": "Pagi ini langit gelap, awan tebal, angin bertiup dingin, dan burung terbang rendah. Cuaca hari ini kemungkinan…","o": ["cerah sekali","akan hujan","sangat panas","bersalju"],"a": 1,"e": "Awan gelap dan tebal, angin dingin, serta burung terbang rendah adalah tanda-tanda akan hujan."},{"lv": "C4","vis": "🥗","q": "Rina membawa bekal nasi, sayur, telur, dan buah. Andi membawa permen dan keripik saja. Bekal yang lebih sehat adalah…","o": ["bekal Andi karena enak","bekal Rina karena lengkap dan bergizi","keduanya sama saja","bekal Andi karena ringan"],"a": 1,"e": "Bekal Rina mengandung makanan bergizi lengkap: nasi, sayur, telur, dan buah."},{"lv": "C4","vis": "🦇","q": "Kelelawar tidur pada siang hari dan mencari makan pada malam hari. Kelelawar termasuk hewan yang…","o": ["aktif pada malam hari","aktif pada siang hari","hidup di dalam air","tidur sepanjang hari"],"a": 0,"e": "Kelelawar aktif mencari makan pada malam hari dan beristirahat pada siang hari."},{"lv": "C4","vis": "🐸","q": "Katak dapat hidup di air dan juga di darat. Katak adalah hewan yang hidup di…","o": ["dua tempat (air dan darat)","air saja","darat saja","dahan pohon saja"],"a": 0,"e": "Katak disebut hewan amfibi karena dapat hidup di dua tempat: air dan darat."},{"lv": "C5","vis": "🌺","q": "Tanaman di kelas mulai layu dan tanah di potnya kering. Tindakan yang PALING tepat adalah…","o": ["menyiram tanaman dengan air secukupnya","menjemurnya lama di bawah matahari terik","meletakkannya di dalam lemari","memotong semua daunnya"],"a": 0,"e": "Tanaman layu karena kekurangan air, jadi harus disiram secukupnya — bukan dijemur terik atau disembunyikan."},{"lv": "C5","vis": "🏠","q": "Kamu ingin memelihara ikan mas di rumah. Tempat yang PALING tepat untuk ikannya adalah…","o": ["kandang ayam","akuarium berisi air bersih","pot bunga","sangkar burung"],"a": 1,"e": "Ikan mas hidup di air bersih, jadi tempatnya adalah akuarium."},{"lv": "C5","vis": "🦷","q": "Agar gigi sehat dan tidak berlubang, kebiasaan yang PALING tepat adalah…","o": ["makan permen setiap malam","sikat gigi pagi dan sebelum tidur","tidak pernah menggosok gigi","menggigit kelereng"],"a": 1,"e": "Menyikat gigi pagi dan sebelum tidur menjaga gigi bersih dan sehat."},{"lv": "C5","vis": "🗑️","q": "Di dekat kantin ada tong sampah. Setelah selesai makan, tindakan yang PALING tepat adalah…","o": ["membuang bungkus ke tong sampah","menaruh bungkus di bawah meja","menyimpan bungkus di dalam tas","melempar bungkus ke halaman"],"a": 0,"e": "Membuang sampah ke tempatnya menjaga kebersihan sekolah."},{"lv": "C5","vis": "⛈️","q": "Saat hujan deras disertai kilat, tempat berteduh yang PALING aman adalah…","o": ["di bawah pohon besar","di dalam rumah","di tengah lapangan","di bawah tiang listrik"],"a": 1,"e": "Saat ada kilat, berteduh di dalam rumah paling aman — pohon dan tiang listrik berbahaya."},{"lv": "C5","vis": "☂️","q": "Kamu membuat payung mainan dari kertas agar tidak tembus air. Bahan yang PALING tepat untuk melapisi kertas itu adalah…","o": ["plastik","kertas tisu","daun kering","kapas"],"a": 0,"e": "Plastik tidak tembus air, jadi paling tepat untuk melapisi payung kertas."},{"lv": "C5","vis": "❄️","q": "Hari ini hujan dan udaranya sangat dingin. Pakaian yang PALING tepat dipakai adalah…","o": ["kaos tipis","jaket tebal","baju renang","seragam olahraga tanpa lengan"],"a": 1,"e": "Saat udara dingin, jaket tebal menjaga tubuh tetap hangat."},{"lv": "C5","vis": "🍳","q": "Ibu sedang memasak. Kompor menyala dan ada air mendidih di panci. Sikap yang PALING aman untukmu adalah…","o": ["bermain dekat kompor","menjauh dari kompor dan menunggu","menyentuh panci yang panas","menyalakan korek api"],"a": 1,"e": "Dapur sedang digunakan untuk memasak; menjauh adalah pilihan paling aman."},{"lv": "C5","vis": "🪶","q": "Sebuah bulu ayam dan sebuah batu kecil dijatuhkan dari atas meja. Kesimpulan yang PALING tepat adalah…","o": ["batu jatuh lebih cepat karena lebih berat","bulu jatuh lebih cepat karena lebih ringan","keduanya melayang di udara","tidak ada yang jatuh"],"a": 0,"e": "Batu lebih berat, sedangkan bulu sangat ringan sehingga tertahan udara dan jatuh lebih lambat."},{"lv": "C5","vis": "🪴","q": "Tanaman diletakkan di kamar yang sama sekali tidak ada cahayanya selama seminggu. Perkiraan yang PALING tepat adalah…","o": ["tanaman tumbuh besar dan subur","tanaman menjadi lemah karena tidak mendapat cahaya","tanaman berbunga lebih banyak","tanaman berubah menjadi batu"],"a": 1,"e": "Tanpa cahaya, daun tidak bisa membuat makanan sehingga tanaman menjadi lemah."},{"lv": "C5","vis": "🍦","q": "Es krim akan dibawa pulang agar tidak cepat mencair. Cara yang PALING tepat adalah…","o": ["membungkusnya dan menaruh di tas yang sejuk","menjemurnya di bawah matahari","meletakkannya dekat kompor","mengocoknya kuat-kuat"],"a": 0,"e": "Udara panas membuat es mencair; tempat yang sejuk menjaga es krim tetap beku."},{"lv": "C6","vis": "⛵","q": "Kamu ingin membuat kapal-kapalan mainan yang dapat mengapung di air. Bahan yang PALING tepat adalah…","o": ["kertas tebal yang dilapisi plastik","besi","batu","kaca"],"a": 0,"e": "Bahan ringan dan tidak tembus air membuat kapal mainan mengapung (C6 — merancang karya)."},{"lv": "C6","vis": "🧊","q": "Anak-anak ingin membuat es batu sendiri dari air. Langkah yang PALING tepat adalah…","o": ["menuang air ke cetakan, lalu menyimpannya di freezer","menuang air, lalu menjemurnya di halaman","memanaskan air, lalu mendiamkannya","mencampur air dengan minyak"],"a": 0,"e": "Air membeku jika ditempatkan di tempat sangat dingin seperti freezer (C6 — menyusun langkah)."},{"lv": "C6","vis": "🌱","q": "Kamu baru menanam biji kacang hijau. Agar biji itu tumbuh dengan baik, yang harus kamu siapkan adalah…","o": ["air, tanah, dan tempat yang mendapat cahaya","air saja di dalam lemari gelap","batu dan pasir kering","minyak dan gula"],"a": 0,"e": "Tumbuhan memerlukan air, tanah, dan cahaya matahari untuk tumbuh (C6 — merancang percobaan)."}];
+
+const LVNAME={C4:"🔍 Analisis (C4)",C5:"⭐ Evaluasi (C5)",C6:"🛠️ Kreasi (C6)"};
+// Soal harian: set hari ini tetap sampai ganti tanggal; komposisi level selalu sama tiap hari
+function daySeed(d){d=d||new Date();return d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate()}
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function shuffle(a,r){for(var i=a.length-1;i>0;i--){var j=Math.floor(r()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function dailySet(pool,n,seed){
+  var rnd=mulberry32(seed===undefined?daySeed():seed);
+  var by={};pool.forEach(function(q,k){(by[q.lv]=by[q.lv]||[]).push(k)});
+  var lvs=Object.keys(by),takes={},fr=[],sum=0;
+  lvs.forEach(function(lv){var ex=n*by[lv].length/pool.length,t=Math.floor(ex);takes[lv]=t;sum+=t;fr.push([lv,ex-t])});
+  fr.sort(function(a,b){return b[1]-a[1]});
+  var gi=0;
+  while(sum<n&&gi<1000){var lv2=fr[gi%fr.length][0];if(takes[lv2]<by[lv2].length){takes[lv2]++;sum++}gi++}
+  var picks=[];
+  lvs.forEach(function(lv){
+    shuffle(by[lv].slice(),rnd).slice(0,takes[lv]).forEach(function(k){picks.push(k)});
+  });
+  shuffle(picks,rnd);
+  return picks.slice(0,Math.min(n,picks.length)).map(function(k){
+    var q=pool[k],ord=shuffle([0,1,2,3],rnd);
+    return{lv:q.lv,vis:q.vis,q:q.q,o:ord.map(function(i){return q.o[i]}),a:ord.indexOf(q.a),e:q.e};
+  });
+}
+const QUIZ=dailySet(DATA,30);
+const $=id=>document.getElementById(id);
+let i=0, ans=new Array(QUIZ.length).fill(-1);
+
+// Simpan skor: localStorage per perangkat (ponytail: tanpa backend — tambah server/API kalau guru perlu lihat skor semua siswa)
+const HKEY="sains_scores_v1";
+const getH=()=>{try{return JSON.parse(localStorage.getItem(HKEY))||[]}catch(e){return[]}};
+const setH=h=>{try{localStorage.setItem(HKEY,JSON.stringify(h))}catch(e){}};
+const medal=s=>s>=27?"🏆":s>=21?"⭐":s>=15?"👍":"💪";
+function renderHist(){
+  const h=getH();
+  $("histbox").classList.toggle("hide",!h.length);
+  $("hist").innerHTML=h.map(r=>
+    `<div class="hrow">${medal(r.s)} <b>${esc(r.n||"Anonim")}</b> — <b>${r.s}/30</b><span class="hdate">${r.d}</span></div>`).join("");
+}
+function pushScore(name,s){
+  const h=getH();
+  h.unshift({n:name||"Anonim",s:s,d:new Date().toLocaleDateString("id-ID",{day:"2-digit",month:"short",year:"numeric"})});
+  setH(h.slice(0,20)); renderHist();
+}
+
+$("go").onclick=()=>{
+  document.body.dataset.name=$("nm").value.trim();
+  $("start").classList.add("hide"); $("quiz").classList.remove("hide");
+  show();
+};
+function show(){
+  const d=QUIZ[i];
+  $("cnt").textContent=`Soal ${i+1} / ${QUIZ.length}`;
+  $("lv").textContent=LVNAME[d.lv];
+  $("fill").style.width=(i/QUIZ.length*100)+"%";
+  $("vis").textContent=d.vis;
+  $("qtext").textContent=d.q;
+  const sub=$("qsub");
+  // baris tabel/blok teks ikut di qtext (pakai \n), sub dipakai opsional
+  sub.classList.add("hide");
+  const box=$("opts"); box.innerHTML="";
+  d.o.forEach((t,k)=>{
+    const b=document.createElement("button");
+    b.className="opt"+(ans[i]===k?" sel":"");
+    b.innerHTML=`<span class="k">${"ABCD"[k]}.</span> ${esc(t)}`;
+    b.disabled=ans[i]>-1;
+    b.onclick=()=>{ans[i]=k;[...box.children].forEach((c,j)=>c.classList.toggle("sel",j===k));
+      box.querySelectorAll(".opt").forEach(c=>c.disabled=true);
+      $("next").disabled=false; $("fill").style.width=((i+1)/QUIZ.length*100)+"%";};
+    box.appendChild(b);
+  });
+  $("next").disabled=ans[i]===-1;
+  $("next").textContent = i===QUIZ.length-1 ? "🏁 Selesai & Lihat Nilai" : "Soal Berikutnya ➜";
+}
+$("next").onclick=()=>{ if(i<QUIZ.length-1){i++;show();} else finish(); };
+$("quit").onclick=finish;
+$("again").onclick=()=>{i=0;ans.fill(-1);$("res").classList.add("hide");
+  $("quiz").classList.remove("hide");show();};
+$("printBtn").onclick=()=>window.print();
+
+function finish(){
+  const sc=ans.reduce((n,v,k)=>n+(v===QUIZ[k].a?1:0),0);
+  const p=Math.round(sc/QUIZ.length*100);
+  $("quiz").classList.add("hide"); $("res").classList.remove("hide");
+  const nm=document.body.dataset.name;
+  $("who").textContent=nm?`🏅 Hasil untuk ${nm}`:"🏅 Hasil Belajarmu";
+  $("sc").textContent=sc; $("circ").style.setProperty("--p",p);
+  let bdg,msg;
+  if(p>=90){bdg="🏆 Juara Sains!";msg="Luar biasa! Kamu sangat paham sains dan berpikir kritis. Pertahankan!";}
+  else if(p>=75){bdg="⭐ Hebat!";msg="Kerja bagus! Hampir semua soal benar. Pelajari lagi soal yang salah ya.";}
+  else if(p>=60){bdg="👍 Bagus!";msg="Bagus! Terus berlatih mengamati benda dan makhluk hidup di sekitarmu, kamu pasti bisa lebih baik.";}
+  else{bdg="💪 Terus Berlatih!";msg="Jangan menyerah! Baca lagi pembahasan tiap soal, lalu coba sekali lagi.";}
+  $("bdg").textContent=bdg; $("msg").textContent=msg;
+  pushScore(nm,sc); $("saved").classList.remove("hide");
+  const rb=$("revbox"); rb.innerHTML="<h2 style='color:var(--primary)'>📖 Pembahasan</h2>";
+  QUIZ.forEach((d,k)=>{
+    const ok=ans[k]===d.a;
+    const you=ans[k]>-1?"ABCD"[ans[k]]+"> "+esc(d.o[ans[k]]):"Tidak dijawab";
+    rb.insertAdjacentHTML("beforeend",
+     `<div class="rev">
+        <span class="st ${ok?'good':'wrong'}">${ok?'✔ Benar':'✘ Salah'} · Soal ${k+1} · ${LVNAME[d.lv]}</span>
+        <div class="qq">${esc(d.q)}</div>
+        <div class="ans">Jawabanmu: ${you}<br>Jawaban benar: <b>${"ABCD"[d.a]}. ${esc(d.o[d.a])}</b></div>
+        <div class="exp">💡 ${esc(d.e)}</div>
+      </div>`);
+  });
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+$("clearHist").onclick=()=>{setH([]);renderHist();};
+renderHist();
+$("daily").textContent="📅 Urutan soal & pilihan jawaban diacak tiap hari, "+new Date().toLocaleDateString("id-ID",{weekday:"long",day:"2-digit",month:"long",year:"numeric"});
+</script>
+</body>
+</html>
