@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cahaya &amp; Listrik HOTS Challenge — Kelas 2 SD</title>
-<meta name="description" content="30 soal Science HOTS: bab Cahaya &amp; Listrik, Kelas 2 SD — berdasar Vector International Primary Science 2">
+<title>Science HOTS Challenge — Semua Bab · Kelas 2 SD</title>
+<meta name="description" content="30 soal Science HOTS semua bab Kelas 2 SD — berdasar Vector International Primary Science 2 (Unit 1-6)">
 <style>
   :root{
     --primary:#6d28d9; --primary-dark:#5b21b6; --accent:#f59e0b;
@@ -83,15 +83,15 @@
 <body>
 <div class="wrap">
   <header>
-    <h1>💡⚡ Cahaya &amp; Listrik HOTS Challenge ⚡💡</h1>
-    <p>Sains / IPA · Kelas 2 SD · Unit 1 Light &amp; Unit 2 Electricity</p>
+    <h1>🔬 Science HOTS Challenge 🔬</h1>
+    <p>Sains / IPA · Kelas 2 SD · Semua bab (Unit 1–6)</p>
     <span class="chip">Kelas 2 SD · Level HOTS (C4–C6)</span>
   </header>
 
   <!-- MULAI -->
   <section id="start" class="card">
     <p style="line-height:1.8">
-      Halo, Bintang! 👋 Ini 30 soal Science HOTS bab Cahaya &amp; Listrik (Unit 1 Light dan Unit 2 Electricity), seperti buku <i>Vector International Primary Science 2</i>.
+      Halo, Bintang! 👋 Ini 30 soal Science HOTS <b>semua bab</b> seperti buku <i>Vector International Primary Science 2</i>: Cahaya, Listrik, Uji Bahan, Sifat Bahan, Matahari &amp; Bumi, serta Makhluk Hidup &amp; Lingkungan. Pilih bab tertentu atau campur semuanya.
       Baca teks dan petunjuk dengan cermat, lalu pilih jawaban terbaik.
     </p>
     <ul class="rules">
@@ -100,6 +100,10 @@
       <li>Jawaban terkunci begitu kamu memilih</li>
       <li>Di akhir, kamu dapat nilai + pembahasan tiap soal</li>
     </ul>
+    <label class="small" for="bab" style="display:block;margin-top:14px;font-weight:bold;color:var(--primary)">Pilih bab 📚</label>
+    <select id="bab" style="width:100%;margin-top:6px;padding:12px;border:2px solid #ddd6fe;border-radius:12px;font-family:inherit;font-size:1rem">
+      <option value="semua">Semua bab (campur)</option>
+    </select>
     <p id="daily" style="margin-top:12px;font-weight:bold;color:var(--primary)"></p>
     <label class="small" for="nm">Namamu (opsional, tampil di hasil) ✏️</label>
     <input class="name" id="nm" type="text" maxlength="30" placeholder="Contoh: Aisyah">
@@ -144,7 +148,7 @@
     <div class="card" id="revbox"></div>
   </section>
 
-  <footer>Dibuat untuk pembelajaran Sains SD: bab Cahaya &amp; Listrik · HOTS: C4 Analisis · C5 Evaluasi · C6 Kreasi</footer>
+  <footer>Dibuat untuk pembelajaran Sains SD (Unit 1–6) · HOTS: C4 Analisis · C5 Evaluasi · C6 Kreasi</footer>
 </div>
 
 <script>
@@ -174,7 +178,13 @@ function dailySet(pool,n,seed){
     return{lv:q.lv,vis:q.vis,q:q.q,o:ord.map(function(i){return q.o[i]}),a:ord.indexOf(q.a),e:q.e};
   });
 }
-const QUIZ=dailySet(DATA,30);
+// daftar bab dari data (topik) — soal lama tanpa topik dianggap 'Cahaya & Listrik' (unit 1-2)
+DATA.forEach(function(q){ if(!q.topik) q.topik = (/listrik|sakelar|baterai|kabel|rangkaian|colokan|motor|buzzer|konduktor|isolator/i.test(q.q) ? "Listrik" : "Cahaya"); });
+var CHAPTERS = [];
+DATA.forEach(function(q){ if(CHAPTERS.indexOf(q.topik) < 0) CHAPTERS.push(q.topik); });
+var bsel = document.getElementById("bab");
+CHAPTERS.forEach(function(c){ var o = document.createElement("option"); o.value = c; o.textContent = c; bsel.appendChild(o); });
+var QUIZ = dailySet(DATA, 30);
 const $=id=>document.getElementById(id);
 let i=0, ans=new Array(QUIZ.length).fill(-1);
 
@@ -197,6 +207,9 @@ function pushScore(name,s){
 
 $("go").onclick=()=>{
   document.body.dataset.name=$("nm").value.trim();
+  var bab=$("bab")?$("bab").value:"semua";
+  var pool=bab==="semua"?DATA:DATA.filter(function(q){return q.topik===bab});
+  QUIZ=dailySet(pool,30); i=0; ans=new Array(QUIZ.length).fill(-1);
   $("start").classList.add("hide"); $("quiz").classList.remove("hide");
   show();
 };
@@ -261,7 +274,7 @@ function finish(){
 function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 $("clearHist").onclick=()=>{setH([]);renderHist();};
 renderHist();
-$("daily").textContent="📅 Soal harian Cahaya & Listrik tiap tanggal — "+new Date().toLocaleDateString("id-ID",{weekday:"long",day:"2-digit",month:"long",year:"numeric"});
+$("daily").textContent="📅 Soal harian semua bab tiap tanggal — "+new Date().toLocaleDateString("id-ID",{weekday:"long",day:"2-digit",month:"long",year:"numeric"});
 </script>
 </body>
 </html>
