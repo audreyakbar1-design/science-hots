@@ -179,11 +179,29 @@ function dailySet(pool,n,seed){
   });
 }
 // daftar bab dari data (topik) — soal lama tanpa topik dianggap 'Cahaya & Listrik' (unit 1-2)
-DATA.forEach(function(q){ if(!q.topik) q.topik = (/listrik|sakelar|baterai|kabel|rangkaian|colokan|motor|buzzer|konduktor|isolator/i.test(q.q) ? "Listrik" : "Cahaya"); });
+// isi topik yang kosong: cari kata kunci bab dulu, kalau tidak ketemu pakai 'Cahaya'
+(function(){
+  var ATUR = [
+    ["Listrik", /listrik|sakelar|baterai|kabel|rangkaian|colokan|buzzer|motor|konduktor|isolator|stopkontak|charger/i],
+    ["Uji Bahan", /elastis|dipilin|dipencet|dibengkok|diregang|larut|membeku|meleleh|dipanaskan|didinginkan|karet|tanah liat/i],
+    ["Sifat Bahan", /batuan|batu |tanah|humus|kerikil|bahan alami|bahan buatan|kayu|logam|plastik/i],
+    ["Matahari dan Bumi", /matahari|bayangan|siang|malam|bumi berputar|terbit|terbenam/i],
+    ["Makhluk Hidup dan Lingkungan", /cuaca|musim|lingkungan|sampah|pencemaran|hujan|mendung|iklim/i],
+    ["Tumbuhan dan Hewan", /tumbuhan|daun|akar|batang|bunga|hewan|kucing|burung|ikan|daur hidup|anak hewan/i],
+    ["Rantai Makanan dan Tempat Hidup", /rantai makanan|produsen|konsumen|pemangsa|habitat|sawah|kebun/i],
+    ["Tubuh Manusia dan Kesehatan", /napas|pernapasan|gigi|kulit|mata|telinga|tulang|otot|makanan sehat|kebersihan|sakit/i]
+  ];
+  DATA.forEach(function(q){
+    if (q.topik) return;
+    for (var i=0;i<ATUR.length;i++){ if (ATUR[i][1].test(q.q)) { q.topik = ATUR[i][0]; return; } }
+    q.topik = "Cahaya";
+  });
+})();
+var BABLIST = ["Cahaya","Listrik","Uji Bahan","Sifat Bahan","Matahari dan Bumi","Makhluk Hidup dan Lingkungan","Tumbuhan dan Hewan","Rantai Makanan dan Tempat Hidup","Tubuh Manusia dan Kesehatan"];
 var CHAPTERS = [];
 DATA.forEach(function(q){ if(CHAPTERS.indexOf(q.topik) < 0) CHAPTERS.push(q.topik); });
 var bsel = document.getElementById("bab");
-CHAPTERS.forEach(function(c){ var o = document.createElement("option"); o.value = c; o.textContent = c; bsel.appendChild(o); });
+BABLIST.forEach(function(c){ var o = document.createElement("option"); o.value = c; o.textContent = c; bsel.appendChild(o); });
 var QUIZ = dailySet(DATA, 30);
 const $=id=>document.getElementById(id);
 let i=0, ans=new Array(QUIZ.length).fill(-1);
